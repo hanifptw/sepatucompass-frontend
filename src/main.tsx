@@ -1,13 +1,42 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { RootRoute, loader as rootLoader } from "./routes/root";
+import { RootRoute } from "./routes/root";
+import { HomeRoute, loader as homeLoader } from "./routes/home";
+import { RegisterRoute, action as registerAction } from "./routes/register";
+import { LoginRoute, action as loginAction } from "./routes/login";
+import { MeRoute, loader as meLoader } from "./routes/me";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootRoute />,
-    loader: rootLoader,
+    children: [
+      {
+        path: "/",
+        element: <HomeRoute />,
+        loader: homeLoader,
+      },
+      {
+        path: "/register",
+        element: <RegisterRoute />,
+        action: registerAction,
+      },
+      {
+        path: "/login",
+        element: <LoginRoute />,
+        action: loginAction,
+      },
+      {
+        path: "/me",
+        element: <MeRoute />,
+        loader: meLoader,
+      },
+      {
+        path: "/cart",
+        // element: <CartRoute />,
+      },
+    ],
   },
 ]);
 

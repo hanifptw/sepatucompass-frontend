@@ -20,7 +20,7 @@ export type Product = {
   updatedAt: Date;
 };
 
-export type user = {
+export type User = {
   id: string;
   username: string;
   email: string;
