@@ -33,10 +33,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
   const token = loginResponse.token;
 
-  console.log(token);
-
   cookies.set("token", token);
-  console.log({ token: cookies.get("token") });
 
   return redirect("/me");
 };
