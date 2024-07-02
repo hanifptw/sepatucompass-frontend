@@ -2,7 +2,9 @@ export type Order = {
   id: string;
   userId: string | null;
   status: string;
-  
+
+  items: OrderItem[];
+
   createdAt: Date;
   updatedAt: Date;
 };
@@ -30,11 +32,11 @@ export type User = {
 };
 
 export type OrderItem = {
-    id: string;
-    productId: string;
-    quantity: number;
-    orderId: string | null;
+  id: string;
+  productId: string;
+  quantity: number;
+  orderId: string | null;
 
-    createdAt: Date;
-    updatedAt: Date;
-}
+  createdAt: Date;
+  updatedAt: Date;
+};
