@@ -3,8 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 export function RootRoute() {
   return (
     <>
-      <header className=" fixed w-full">
-        <div className="flex my-5 mx-10 justify-between ">
+      <header className="fixed  w-full   ">
+        <div className="flex py-5 px-10 justify-between ">
           <img src="src/img/compass.svg" alt="logo-sepatucompass" />
           <nav className="flex">
             <ul className="flex gap-5 text-white">

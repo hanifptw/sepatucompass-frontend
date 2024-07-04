@@ -1,10 +1,11 @@
 import { ActionFunctionArgs, Form, redirect } from "react-router-dom";
 import { User } from "../types";
+import { Button } from "primereact/button";
 
-type RegisteredResponse ={
-    message: string;
-    newUser: Pick<User,"username">
-}
+type RegisteredResponse = {
+  message: string;
+  newUser: Pick<User, "username">;
+};
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
@@ -37,24 +38,51 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export function RegisterRoute() {
   return (
-    <main>
-      <h1>Register</h1>
+    <main className="flex justify-center ">
+      <img className="w-full" src="/src/img/bg-sepatucompass.webp" alt="" />
+      <div className="absolute bg-white flex flex-col max-w-sm items-center p-10 my-24">
+        <h1 className="pb-7 font-bold uppercase text-2xl">Register</h1>
 
-      <Form method="post">
-        <div>
-          <label htmlFor="username">Username</label>
-          <input id="username" type="text" required name="username" />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input id="email" type="email" required name="email" />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input id="password" type="password" required name="password" />
-        </div>
-        <button type="submit">Register New User</button>
-      </Form>
+        <Form className="flex gap-5 flex-col" method="post">
+          <div className=" flex justify-between gap-10">
+            <label className="" htmlFor="username">
+              Username
+            </label>
+            <input
+              className="border-b border-black"
+              id="username"
+              type="text"
+              required
+              name="username"
+            />
+          </div>
+
+          <div className="flex justify-between">
+            <label htmlFor="email">Email</label>
+            <input
+              className="border-b border-black"
+              id="email"
+              type="email"
+              required
+              name="email"
+            />
+          </div>
+
+          <div className="flex justify-between">
+            <label htmlFor="password">Password</label>
+            <input
+              className="border-b border-black"
+              id="password"
+              type="password"
+              required
+              name="password"
+            />
+          </div>
+          <button className="bg-black text-white py-2 px-4 mt-6" type="submit">
+            Register
+          </button>
+        </Form>
+      </div>
     </main>
   );
 }

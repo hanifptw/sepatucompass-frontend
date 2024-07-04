@@ -31,20 +31,28 @@ export function ProductDetailRoute() {
 
   return (
     <>
-      <div className="flex pt-40 ">
-        <div className="max-w-40">
-          <h4 className="text-center">{product.name}</h4>
-          <p>{product.description}</p>
+      <div className="grid grid-cols-3 gap-24 py-24 px-10">
+        <div className="flex gap-10 flex-col">
+          <h4 className="text-3xl uppercase font-bold">{product.name}</h4>
+          <p className="text-sm text-gray-700">{product.description}</p>
         </div>
         <img
+          className=""
           src={product.imageURL}
           alt={product.name}
-          width={200}
-          height={200}
+          width={700}
+          height={700}
         />
-        <div>
-          <p className="text-center font-bold">Rp.{product.price}</p>
-          <button>add to cart</button>
+        <div className="flex flex-col gap-5 flex">
+          <p className="font-bold text-3xl">Rp.{product.price}</p>
+          <div className="grid grid-cols-3 gap-5">
+            {product.sizes.map((size) => (
+              <p className="py-4 border text-center" key={size}>{size}</p>
+            ))}
+          </div>
+          <button className="bg-black text-white py-2 px-4" type="submit">
+            add to cart
+          </button>
         </div>
       </div>
     </>
