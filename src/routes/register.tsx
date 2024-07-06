@@ -38,7 +38,11 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 export function RegisterRoute() {
   return (
     <main className="flex justify-center ">
-      <img className="w-full" src="/src/img/bg-sepatucompass.webp" alt="" />
+      <img
+        className="w-full"
+        src="/images/bg-sepatucompass.webp"
+        alt="Background"
+      />
       <div className="absolute bg-white flex flex-col max-w-sm items-center p-10 my-24">
         <h1 className="pb-7 font-bold uppercase text-2xl">Register</h1>
 

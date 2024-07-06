@@ -33,13 +33,12 @@ export function ProductDetailRoute() {
           <p className="text-sm text-gray-700">{product.description}</p>
         </div>
         <img
-          className=""
           src={product.imageURL}
           alt={product.name}
           width={700}
           height={700}
         />
-        <div className="flex flex-col gap-5 flex">
+        <div className="flex flex-col gap-5">
           <p className="font-bold text-3xl">Rp.{product.price}</p>
           <div className="grid grid-cols-3 gap-5">
             {product.sizes.map((size) => (

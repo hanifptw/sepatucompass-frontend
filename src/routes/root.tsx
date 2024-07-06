@@ -5,7 +5,6 @@ const token = cookies.get("token");
 
 function logout() {
   cookies.set("token", null);
-  
 }
 
 export function RootRoute() {
@@ -13,7 +12,7 @@ export function RootRoute() {
     <>
       <header className="fixed  w-full   ">
         <div className="flex py-5 px-10 justify-between ">
-          <img src="src/img/compass.svg" alt="logo-sepatucompass" />
+          <img src="/images/compass.svg" alt="logo-sepatucompass" />
           <nav className="flex">
             <ul className="flex gap-5 text-white">
               <li>
@@ -28,8 +27,12 @@ export function RootRoute() {
                   <li className="">
                     <Link to={"/cart"}>CART</Link>
                   </li>
-                  <li  onClick={() => {logout()} }>
-                    <Link  to={"/"}>LOGOUT</Link>
+                  <li
+                    onClick={() => {
+                      logout();
+                    }}
+                  >
+                    <Link to={"/"}>LOGOUT</Link>
                   </li>
                 </div>
               ) : (
@@ -55,7 +58,7 @@ export function RootRoute() {
         <div className="flex my-5 mx-10 justify-between items-center">
           <img
             className=" h-3 w-auto"
-            src="src/img/compass.svg"
+            src="/images/compass.svg"
             alt="logo-sepatucompass"
           />
           <p className="text-sm">

@@ -15,7 +15,7 @@ export function HomeRoute() {
     <>
       <div>
         <img
-          src="/src/img/banner-sepatucompass.webp"
+          src="/images/banner-sepatucompass.webp"
           alt="banner-sepatu-compass"
         />
       </div>
