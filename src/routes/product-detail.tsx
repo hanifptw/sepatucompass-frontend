@@ -1,9 +1,4 @@
-import {
-  ActionFunctionArgs,
-  Link,
-  LoaderFunctionArgs,
-  useLoaderData,
-} from "react-router-dom";
+import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import { Product } from "../types/index";
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -31,6 +26,7 @@ export function ProductDetailRoute() {
 
   return (
     <>
+      <div className=" bg-black w-full h-16"></div>
       <div className="grid grid-cols-3 gap-24 py-24 px-10">
         <div className="flex gap-10 flex-col">
           <h4 className="text-3xl uppercase font-bold">{product.name}</h4>
@@ -47,7 +43,9 @@ export function ProductDetailRoute() {
           <p className="font-bold text-3xl">Rp.{product.price}</p>
           <div className="grid grid-cols-3 gap-5">
             {product.sizes.map((size) => (
-              <p className="py-4 border text-center" key={size}>{size}</p>
+              <p className="py-4 border text-center" key={size}>
+                {size}
+              </p>
             ))}
           </div>
           <button className="bg-black text-white py-2 px-4" type="submit">

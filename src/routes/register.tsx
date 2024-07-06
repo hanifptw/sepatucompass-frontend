@@ -1,6 +1,5 @@
 import { ActionFunctionArgs, Form, redirect } from "react-router-dom";
 import { User } from "../types";
-import { Button } from "primereact/button";
 
 type RegisteredResponse = {
   message: string;

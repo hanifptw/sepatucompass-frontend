@@ -75,6 +75,5 @@ export function LoginRoute() {
         </Form>
       </div>
     </main>
-    
   );
 }

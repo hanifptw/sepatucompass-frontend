@@ -1,4 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
+import { cookies } from "../modules/auth";
+
+const token = cookies.get("token");
+
+function logout() {
+  cookies.set("token", null);
+  
+}
 
 export function RootRoute() {
   return (
@@ -11,18 +19,29 @@ export function RootRoute() {
               <li>
                 <Link to={"/"}>HOME</Link>
               </li>
-              <li>
-                <Link to={"/register"}>REGISTER</Link>
-              </li>
-              <li>
-                <Link to={"/login"}>LOGIN</Link>
-              </li>
-              <li>
-                <Link to={"/me"}>ACCOUNT</Link>
-              </li>
-              <li>
-                <Link to={"/cart"}>CART</Link>
-              </li>
+
+              {token ? (
+                <div className="flex gap-5 ">
+                  <li className="">
+                    <Link to={"/me"}>ACCOUNT</Link>
+                  </li>
+                  <li className="">
+                    <Link to={"/cart"}>CART</Link>
+                  </li>
+                  <li  onClick={() => {logout()} }>
+                    <Link  to={"/"}>LOGOUT</Link>
+                  </li>
+                </div>
+              ) : (
+                <div className="flex gap-5 ">
+                  <li>
+                    <Link to={"/register"}>REGISTER</Link>
+                  </li>
+                  <li>
+                    <Link to={"/login"}>LOGIN</Link>
+                  </li>
+                </div>
+              )}
             </ul>
           </nav>
         </div>
@@ -39,7 +58,9 @@ export function RootRoute() {
             src="src/img/compass.svg"
             alt="logo-sepatucompass"
           />
-          <p>COPYRIGHT &#169; 2024 Brilliant Hanif Almubarak</p>
+          <p className="text-sm">
+            Copyright &#169; 2024 Brilliant Hanif Almubarak
+          </p>
         </div>
       </footer>
     </>

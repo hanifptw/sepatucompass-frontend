@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RootRoute } from "./routes/root";
@@ -12,7 +11,7 @@ import {
   ProductDetailRoute,
   loader as productDetailLoader,
 } from "./routes/product-detail";
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import { PrimeReactProvider } from "primereact/api";
 import "primereact/resources/themes/mdc-light-indigo/theme.css";
 
 const router = createBrowserRouter([

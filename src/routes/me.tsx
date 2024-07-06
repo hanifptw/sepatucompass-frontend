@@ -27,8 +27,13 @@ export function MeRoute() {
 
   return (
     <>
-      <h2>My User Account Detail</h2>
-      <pre>{JSON.stringify(myUserResponse, null, 2)}</pre>
+      <main>
+        <div className="static bg-black w-full h-16" />
+
+        <h2>My User Account Detail</h2>
+        <p>{myUserResponse.user.username}</p>
+        <pre>{JSON.stringify(myUserResponse, null, 2)}</pre>
+      </main>
     </>
   );
 }
