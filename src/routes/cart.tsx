@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { Order, User } from "../types/index";
+import { Order } from "../types/index";
 import { cookies } from "../modules/auth";
 
 type CartResponse = {
@@ -17,8 +17,7 @@ export async function loader() {
   });
   const cartResponse: CartResponse = await response.json();
 
-  return {cart: cartResponse.cart}
-
+  return { cart: cartResponse.cart };
 }
 
 export function CartRoute() {
